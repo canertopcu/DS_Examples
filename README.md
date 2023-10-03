@@ -102,7 +102,3 @@ This Unity project includes several scripts that demonstrate the use of differen
 ## License
 
 This code is provided under the [MIT License](LICENSE).
-
----
-
-This README file now includes information about all four data structure examples in your Unity project: `ListController`, `ArrayController`, `StackController`, and `QueueController`. Users can follow the provided instructions to understand and interact with each of these examples.
