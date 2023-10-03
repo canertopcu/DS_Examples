@@ -1,8 +1,8 @@
-# Data Structre Examples in Unity
- 
+# Data Structure Examples in Unity
+
 ## Overview
 
-These Unity scripts, `ListController` and `ArrayController`, demonstrate how to manage game objects using both arrays and lists. They provide functionality to add and remove objects dynamically during runtime.
+This Unity project includes several scripts that demonstrate the use of different data structures (Lists, Arrays, Stacks, and Queues) to manage game objects dynamically during runtime. These scripts provide functionality to add and remove objects, showcasing various data structure implementations.
 
 ## ListController
 
@@ -20,7 +20,7 @@ These Unity scripts, `ListController` and `ArrayController`, demonstrate how to 
 2. In the Unity Inspector, you will find the following public fields:
 
    - `Players`: A string array for storing player names (not used in this example).
-   - `objectsToMove`: A list of GameObjects to manage moving objects.
+   - `objectPool`: A list of GameObjects to manage moving objects.
    - `moveSpeed`: A float value for controlling object movement speed.
 
 3. Play the scene and use the following controls:
@@ -44,7 +44,7 @@ These Unity scripts, `ListController` and `ArrayController`, demonstrate how to 
 2. In the Unity Inspector, you will find the following public fields:
 
    - `Players`: A string array for storing player names (not used in this example).
-   - `objectsToMove`: An array of GameObjects to manage moving objects.
+   - `objectPool`: An array of GameObjects to manage moving objects.
    - `moveSpeed`: A float value for controlling object movement speed.
    - `numberOfObjects`: An integer for specifying the initial number of objects.
 
@@ -53,10 +53,56 @@ These Unity scripts, `ListController` and `ArrayController`, demonstrate how to 
    - Press "A" key: Adds a new sphere GameObject to the scene, moving it to a random position.
    - Press "S" key: Removes the last sphere GameObject added to the scene.
 
- 
+## StackController
+
+`StackController` showcases the usage of the `Stack<T>` data structure. It demonstrates how to:
+
+- Create a stack of strings and GameObjects.
+- Push elements onto the stack.
+- Pop elements from the stack (Last In, First Out - LIFO).
+- Add and remove game objects from the stack.
+
+### Instructions
+
+1. Attach the `StackController` script to a GameObject in your Unity scene.
+
+2. In the Unity Inspector, you will find the following public fields:
+
+   - `Players`: A stack of strings for storing player names.
+   - `objectPool`: A stack of GameObjects for managing moving objects.
+
+3. Play the scene and use the following controls:
+
+   - Press "A" key: Adds a new sphere GameObject to the scene, incrementing its name and position.
+   - Press "S" key: Removes the last sphere GameObject added to the scene.
+
+## QueueController
+
+`QueueController` demonstrates the usage of the `Queue<T>` data structure. It illustrates how to:
+
+- Create a queue of strings and GameObjects.
+- Enqueue elements into the queue.
+- Dequeue elements from the queue (First In, First Out - FIFO).
+- Add and remove game objects from the queue.
+
+### Instructions
+
+1. Attach the `QueueController` script to a GameObject in your Unity scene.
+
+2. In the Unity Inspector, you will find the following public fields:
+
+   - `Players`: A queue of strings for storing player names.
+   - `objectPool`: A queue of GameObjects for managing moving objects.
+
+3. Play the scene and use the following controls:
+
+   - Press "A" key: Adds a new sphere GameObject to the scene, incrementing its name and position.
+   - Press "S" key: Removes a sphere GameObject from the scene (FIFO order).
 
 ## License
 
 This code is provided under the [MIT License](LICENSE).
 
- 
+---
+
+This README file now includes information about all four data structure examples in your Unity project: `ListController`, `ArrayController`, `StackController`, and `QueueController`. Users can follow the provided instructions to understand and interact with each of these examples.
