@@ -2,21 +2,51 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class ListController : MonoBehaviour
+public class ListController : MonoBehaviour, IObjectUpdate
 {
-    public string[] Players;
-    public List<GameObject> objectsToMove = new List<GameObject>(); 
-      
-    private void Start()
+    public List<string> Players = new List<string>();
+    public List<GameObject> objectPool = new List<GameObject>();
+
+    public void AddObject()
     {
+        GameObject newObj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        int index = objectPool.Count;
+        newObj.transform.position = new Vector3(0, index, 0);
+        newObj.transform.name = "MovingObject_" + index;
+        objectPool.Add(newObj);
+    }
+
+    public void RemoveObject()
+    {
+        int count = objectPool.Count;
+        if (count > 0)
+        {
+            Destroy(objectPool[count - 1]);
+            objectPool.RemoveAt(count - 1);
+        }
+    }
+
+    private void Start()
+    { 
+        Players.Add("John");
+        Players.Add("Michael");
+        Players.Add("Jessica");
+        Players.Add("Nora");
+
+        foreach (var p in Players)
+        {
+            Debug.LogError(p);
+        }
+
+
         int numberOfObjects = 5;
 
         for (int i = 0; i < numberOfObjects; i++)
         {
             GameObject newObj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            newObj.transform.position = new Vector3(0, i, UnityEngine.Random.Range(-1f, 1f));
+            newObj.transform.position = new Vector3(0, i, 0);
             newObj.transform.name = "MovingObject_" + i;
-            objectsToMove.Add(newObj); // Add the new object to the List.
+            objectPool.Add(newObj);
         }
     }
 
@@ -24,21 +54,11 @@ public class ListController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            GameObject newObj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            int index = objectsToMove.Count; // Use Count property instead of Length.
-            newObj.transform.position = new Vector3(0, index, UnityEngine.Random.Range(-1f, 1f));
-            newObj.transform.name = "MovingObject_" + index;
-            objectsToMove.Add(newObj); // Add the new object to the List.
+            AddObject();
         }
-
         if (Input.GetKeyDown(KeyCode.S))
         {
-            int count = objectsToMove.Count; // Use Count property instead of Length.
-            if (count > 0)
-            {
-                Destroy(objectsToMove[count - 1]);
-                objectsToMove.RemoveAt(count - 1); // Remove the last object from the List.
-            }
+            RemoveObject();
         }
     }
 }

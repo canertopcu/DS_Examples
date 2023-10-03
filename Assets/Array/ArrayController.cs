@@ -1,43 +1,39 @@
-using System; 
+using System;
 using UnityEngine;
 
-public class ArrayController : MonoBehaviour
+public class ArrayController : MonoBehaviour, IObjectUpdate
 {
     public string[] Players; 
-    public GameObject[] objectsToMove;
+    public GameObject[] objectPool;
   
     public int numberOfObjects = 5;
 
     private void Start()
     {
-
-        objectsToMove = new GameObject[numberOfObjects];
+        Players = new string[4];
+        Players[0]= "John";
+        Players[1]= "Michael";
+        Players[2]= "Jessica";
+        Players[3]= "Nora";
+               
+        objectPool = new GameObject[numberOfObjects];
         for (int i = 0; i < numberOfObjects; i++)
         {
-            objectsToMove[i] = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            objectsToMove[i].transform.position = new Vector3(0, i, UnityEngine.Random.Range(-1f, 1f));
-            objectsToMove[i].transform.name = "MovingObject_" + i; 
+            objectPool[i] = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            objectPool[i].transform.position = new Vector3(0, i, 0);
+            objectPool[i].transform.name = "MovingObject_" + i; 
         } 
     }
 
     private void Update()
     { 
         if (Input.GetKeyDown(KeyCode.A)) {
-            GameObject newObj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            int index = objectsToMove.Length;
-            newObj.transform.position = new Vector3(0, index, UnityEngine.Random.Range(-1f, 1f));
-            newObj.transform.name = "MovingObject_" + index;
-            AddObjectToArray(ref objectsToMove, newObj);
+            AddObject();
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            int length = objectsToMove.Length;
-            if (length>0)
-            {
-                Destroy(objectsToMove[length - 1]);
-                RemoveLastObjectFromArray(ref objectsToMove); 
-            }
+            RemoveObject();
         }
     }
 
@@ -81,5 +77,23 @@ public class ArrayController : MonoBehaviour
         array = newArray;
     }
 
+    public void AddObject()
+    {
+        GameObject newObj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        int index = objectPool.Length;
+        newObj.transform.position = new Vector3(0, index, 0);
+        newObj.transform.name = "MovingObject_" + index;
+        AddObjectToArray(ref objectPool, newObj);
+    }
+
+    public void RemoveObject()
+    {
+        int length = objectPool.Length;
+        if (length > 0)
+        {
+            Destroy(objectPool[length - 1]);
+            RemoveLastObjectFromArray(ref objectPool);
+        }
+    }
 }
 
