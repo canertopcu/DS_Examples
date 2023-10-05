@@ -125,6 +125,47 @@ This Unity project includes several scripts that demonstrate the use of differen
 
 4. When adding a player type, ensure that you provide a unique player type key, as duplicate keys are not allowed.
 
+
+## Hashtable
+
+The `SerializableHashtable` is a custom data structure designed for Unity that allows you to store key-value pairs in a way that can be easily serialized and edited in the Unity Inspector. It is particularly useful when you need to store complex data for various types of objects.
+
+### Features
+
+- Add and remove key-value pairs dynamically during runtime.
+- Serialize and inspect the Hashtable in the Unity Editor.
+- Use complex types as keys and values.
+
+### Usage
+
+1. Attach the `HashtableController` script to a GameObject in your Unity scene.
+
+2. In the Unity Inspector, you will find the following public fields:
+
+   - `selectType`: A dropdown selection for choosing a player type.
+   - `selectedPlayerInfo`: Player information to associate with the selected player type.
+   - `playerInfoHashtable`: A `SerializableHashtable` for managing player types and their information.
+
+3. Play the scene and use the following controls:
+
+   - Press "A" key: Adds a new player type and associates it with the provided player information.
+   - Press "S" key: Removes the selected player type from the Hashtable.
+
+4. When adding a player type, ensure that you provide a unique player type key, as duplicate keys are not allowed.
+
+### SerializableHashtable Class
+
+The `SerializableHashtable` class implements the `ISerializationCallbackReceiver` interface to ensure that the Hashtable can be properly serialized and deserialized. It internally uses a Hashtable to store the key-value pairs.
+
+### SerializableKeyValuePair Class
+
+The `SerializableKeyValuePair` class is used to represent individual key-value pairs within the `SerializableHashtable`. It is also serializable and stores the key and value as serializable fields.
+
+### Example
+
+Check the `HashtableController` script for an example of how to use the `SerializableHashtable` data structure to manage player information during runtime.
+
+
 ## License
 
 This code is provided under the [MIT License](LICENSE).
