@@ -8,9 +8,9 @@ public class DictionaryController : MonoBehaviour, IObjectUpdate
 
 
     [SerializeField]
-    private SerializableDictionary<PlayerType, PlayerInfo> serializableDictionary = new SerializableDictionary<PlayerType, PlayerInfo>();
+    private SerializableDictionary<PlayerType, PlayerInfo> serializableDictionary = new SerializableDictionary<PlayerType, PlayerInfo>(); 
 
-    
+
     void Start()
     {
         serializableDictionary .Add(PlayerType.Human, new PlayerInfo
@@ -54,8 +54,7 @@ public class DictionaryController : MonoBehaviour, IObjectUpdate
             serializableDictionary.Add(selectType, selectedPlayerInfo); 
             Debug.Log(selectType + " is created");
         }
-        else {
-            serializableDictionary.GetValue(selectType);
+        else { 
             Debug.LogError(selectType + " is already in the dictionary!");
         }
        
