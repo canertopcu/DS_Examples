@@ -99,6 +99,32 @@ This Unity project includes several scripts that demonstrate the use of differen
    - Press "A" key: Adds a new sphere GameObject to the scene, incrementing its name and position.
    - Press "S" key: Removes a sphere GameObject from the scene (FIFO order).
 
+## DictionaryController
+
+`DictionaryController` utilizes the `SerializableDictionary<PlayerType, PlayerInfo>` data structure to manage player information in a key-value fashion. It showcases how to:
+
+- Create a dictionary of player types and associated player information.
+- Add new player types and their information to the dictionary.
+- Remove player types from the dictionary.
+- Retrieve player information based on player type.
+
+### Instructions
+
+1. Attach the `DictionaryController` script to a GameObject in your Unity scene.
+
+2. In the Unity Inspector, you will find the following public fields:
+
+   - `selectType`: A dropdown selection for choosing a player type.
+   - `selectedPlayerInfo`: Player information to associate with the selected player type.
+   - `serializableDictionary`: A SerializableDictionary for managing player types and their information.
+
+3. During gameplay, you can use the following controls:
+
+   - Press "A" key: Adds a new player type and associates it with the provided player information.
+   - Press "S" key: Removes the selected player type from the dictionary.
+
+4. When adding a player type, ensure that you provide a unique player type key, as duplicate keys are not allowed.
+
 ## License
 
 This code is provided under the [MIT License](LICENSE).
