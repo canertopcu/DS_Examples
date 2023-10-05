@@ -2,9 +2,9 @@
 
 ## Overview
 
-This Unity project includes several scripts that demonstrate the use of different data structures (Lists, Arrays, Stacks, and Queues) to manage game objects dynamically during runtime. These scripts provide functionality to add and remove objects, showcasing various data structure implementations.
+This Unity project includes several scripts that demonstrate the use of different data structures (Lists, Arrays, Stacks, Queues and Dictionaries) to manage game objects dynamically during runtime. These scripts provide functionality to add and remove objects, showcasing various data structure implementations.
 
-## ListController
+## List
 
 `ListController` utilizes the `List<GameObject>` data structure to manage game objects. It showcases how to:
 
@@ -28,7 +28,7 @@ This Unity project includes several scripts that demonstrate the use of differen
    - Press "A" key: Adds a new sphere GameObject to the scene, moving it to a random position.
    - Press "S" key: Removes the last sphere GameObject added to the scene.
 
-## ArrayController
+## Array
 
 `ArrayController` utilizes traditional `GameObject[]` arrays to manage game objects. It demonstrates similar functionality to `ListController`, including:
 
@@ -53,7 +53,7 @@ This Unity project includes several scripts that demonstrate the use of differen
    - Press "A" key: Adds a new sphere GameObject to the scene, moving it to a random position.
    - Press "S" key: Removes the last sphere GameObject added to the scene.
 
-## StackController
+## Stack
 
 `StackController` showcases the usage of the `Stack<T>` data structure. It demonstrates how to:
 
@@ -76,7 +76,7 @@ This Unity project includes several scripts that demonstrate the use of differen
    - Press "A" key: Adds a new sphere GameObject to the scene, incrementing its name and position.
    - Press "S" key: Removes the last sphere GameObject added to the scene.
 
-## QueueController
+## Queue
 
 `QueueController` demonstrates the usage of the `Queue<T>` data structure. It illustrates how to:
 
@@ -99,7 +99,7 @@ This Unity project includes several scripts that demonstrate the use of differen
    - Press "A" key: Adds a new sphere GameObject to the scene, incrementing its name and position.
    - Press "S" key: Removes a sphere GameObject from the scene (FIFO order).
 
-## DictionaryController
+## Dictionary
 
 `DictionaryController` utilizes the `SerializableDictionary<PlayerType, PlayerInfo>` data structure to manage player information in a key-value fashion. It showcases how to:
 
