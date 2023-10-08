@@ -166,6 +166,53 @@ The `SerializableKeyValuePair` class is used to represent individual key-value p
 Check the `HashtableController` script for an example of how to use the `SerializableHashtable` data structure to manage player information during runtime.
 
 
+## HashSetController
+
+HashSetController is a Unity script that demonstrates the use of a custom SerializableHashSet data structure to manage a collection of unique strings. This script allows you to add and remove strings from the collection and ensures that each string is unique within the set.
+
+### Features
+
+HashSetController showcases how to:
+
+- Create a SerializableHashSet to store and manage a collection of unique strings.
+- Add new strings to the collection, ensuring they are unique.
+- Remove strings from the collection.
+- Respond to user input to perform these actions.
+
+### Instructions
+
+Follow these steps to use the HashSetController script in your Unity project:
+
+1. **Attach the Script**:
+
+   - Attach the `HashSetController` script to a GameObject in your Unity scene.
+
+2. **Inspector Fields**:
+
+   - In the Unity Inspector for the GameObject with the `HashSetController` script, you will find the following public fields:
+
+     - **Add Player Name**: A string field that allows you to specify a player name to add to the HashSet.
+     - **UniqueUserList**: A field of type `SerializableHashSet<string>` that represents the collection of unique user names.
+     
+3. **Playing the Scene**:
+
+   - Play the scene in Unity.
+
+4. **User Controls**:
+
+   - While in play mode, use the following keyboard controls:
+
+     - Press the "A" key: This adds the player name specified in the "Add Player Name" field to the `UniqueUserList`. If the name is not already in the collection, it will be added.
+     - Press the "S" key: This removes the player name specified in the "Add Player Name" field from the `UniqueUserList`. If the name exists in the collection, it will be removed.
+
+### Example Usage
+
+The `HashSetController` script provides a practical example of how to manage a collection of unique strings, which can be helpful in various game development scenarios where you need to track and manage unique elements.
+
+**Note**: Make sure to adjust the `addPlayerName` field in the Inspector to specify the player name you want to add or remove.
+
+Feel free to integrate and customize the `SerializableHashSet` and `HashSetController` script in your Unity project as needed.
+
 ## License
 
 This code is provided under the [MIT License](LICENSE).
